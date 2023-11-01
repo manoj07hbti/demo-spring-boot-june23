@@ -18,6 +18,7 @@ public class Controller{
         }
     }
 
+
     @RequestMapping("/AT&T")
     public String hello() {
         return " Welcome to FrameWork ";
