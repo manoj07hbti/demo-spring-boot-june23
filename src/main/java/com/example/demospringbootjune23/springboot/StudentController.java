@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 @RestController
 public class StudentController {
-
     ArrayList<Student_Class> studentClassArrayList = new ArrayList<>();
 
     @RequestMapping("/add_student/{name}/{age}/{section}")

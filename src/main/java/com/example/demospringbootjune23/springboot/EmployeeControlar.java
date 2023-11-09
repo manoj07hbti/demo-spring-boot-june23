@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 @RestController
 public class EmployeeControlar {
-
     ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
     @RequestMapping("/add_emp/{name}/{ID}/{department}")
