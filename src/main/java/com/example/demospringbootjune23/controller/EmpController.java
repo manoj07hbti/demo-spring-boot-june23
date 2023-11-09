@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 @RestController
 public class EmpController {
-
     ArrayList<Employee> employeeArrayList=new ArrayList<>();
 
     //Add

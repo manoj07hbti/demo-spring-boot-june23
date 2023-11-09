@@ -1,7 +1,6 @@
 package com.example.demospringbootjune23.model;
 
 public class Employee {
-
     public String empName;
     public int    empId;
     public   String  dept;

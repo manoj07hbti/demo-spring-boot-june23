@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 public class Controller{
-
     List<String> list = new ArrayList<>();
 
     @RequestMapping("/Demo")
