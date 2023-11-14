@@ -1,38 +1,37 @@
-package com.example.demospringbootjune23.model;
+package com.example.demospringbootjune23.Model;
 
 public class Student {
-
-    String name;
-    int age;
-    String section;
+    String Name;
+    int Age;
+    String Section;
 
     public Student(String name, int age, String section) {
-        this.name = name;
-        this.age = age;
-        this.section = section;
+        Name = name;
+        Age = age;
+        Section = section;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public int getAge() {
-        return age;
+        return Age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        Age = age;
     }
 
     public String getSection() {
-        return section;
+        return Section;
     }
 
     public void setSection(String section) {
-        this.section = section;
+        Section = section;
     }
 }
