@@ -1,14 +1,13 @@
 package com.example.demospringbootjune23.model;
 
 public class Student {
-
     String name;
-    int age;
+    int roll_no;
     String section;
 
-    public Student(String name, int age, String section) {
+    public Student(String name, int roll_no, String section) {
         this.name = name;
-        this.age = age;
+        this.roll_no = roll_no;
         this.section = section;
     }
 
@@ -20,12 +19,12 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getRoll_no() {
+        return roll_no;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setRoll_no(int roll_no) {
+        this.roll_no = roll_no;
     }
 
     public String getSection() {
