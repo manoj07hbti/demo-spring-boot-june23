@@ -13,8 +13,8 @@ public class AssignmentNo_3_ {
     ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
     @RequestMapping("/EMP_LIST/{EmpName}/{EmpID}/{EmpSal}")
-    public ArrayList<Employee> addAndGetEmployees(@PathVariable String EmpName, @PathVariable String EmpID, @PathVariable double EmpSal) {
-        Employee employee = new Employee(EmpName, EmpID, EmpSal);
+    public ArrayList<Employee> addAndGetEmployees(@PathVariable String EmpName, @PathVariable int EmpID, @PathVariable String dept) {
+        Employee employee = new Employee(EmpName, EmpID, dept);
         employeeArrayList.add(employee);
         return employeeArrayList;
 
