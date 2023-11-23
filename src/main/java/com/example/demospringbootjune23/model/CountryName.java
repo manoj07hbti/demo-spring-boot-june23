@@ -1,11 +1,20 @@
 package com.example.demospringbootjune23.model;
 
-public class CountryName {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity(name="Country_Class")
+public class CountryName {
+    @Id
+    @GeneratedValue
+            Long id;
     String countryName;
     String totalState;
     int countryPopulation;
 
+    public CountryName() {
+    }
 
     public CountryName(String countryName, String totalState, int countryPopulation) {
         this.countryName = countryName;
