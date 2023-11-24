@@ -1,10 +1,21 @@
 package com.example.demospringbootjune23.model;
 
-public class Student {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity(name="STUDENT_TABLE")// it will make this java class as Database Table
+
+public class Student {
+    @Id // it will make this field primary key:it will allow only unique identity
+    @GeneratedValue // it will automatically provide value to id column
+    int rollNo;
     String name;
     int age;
     String section;
+
+    public Student() {
+    }
 
     public Student(String name, int age, String section) {
         this.name = name;

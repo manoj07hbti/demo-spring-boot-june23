@@ -4,29 +4,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="EMPLOYEE_TABLE")// it will make this java class as Database Table
-
-public class Employee {
-
+@Entity// it will make this java class as Database Table
+public class ENGINEER_TABLE {
 
     @Id // it will make this field primary key:it will allow only unique identity
     @GeneratedValue // it will automatically provide value to id column
     Long id;
-
-
     public String empName;
-    public int    empId;
-    public   String  dept;
+    public int engID;
+    public String city;
 
-
-    //default constructor
-    public Employee() {
+    public ENGINEER_TABLE() {
     }
 
-    public Employee(String empName, int empId, String dept) {
+    public ENGINEER_TABLE(String empName, int engID, String city) {
         this.empName = empName;
-        this.empId = empId;
-        this.dept = dept;
+        this.engID = engID;
+        this.city = city;
     }
 
     public String getEmpName() {
@@ -37,19 +31,22 @@ public class Employee {
         this.empName = empName;
     }
 
-    public int getEmpId() {
-        return empId;
+    public int getEngID() {
+        return engID;
     }
 
-    public void setEmpId(int empId) {
-        this.empId = empId;
+    public void setEngID(int engID) {
+        this.engID = engID;
     }
 
-    public String getDept() {
-        return dept;
+    public String getCity() {
+        return city;
     }
 
-    public void setDept(String dept) {
-        this.dept = dept;
+    public void setCity(String city) {
+        this.city = city;
     }
 }
+
+
+
