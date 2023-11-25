@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 public class DemoRepository {
     public String massage(){
 
-        return  "This is Repository  Layer .........";
+        return  "This is Repository  Layer ............";
     }
 }
