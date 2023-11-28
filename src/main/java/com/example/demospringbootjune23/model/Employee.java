@@ -1,38 +1,37 @@
 package com.example.demospringbootjune23.model;
 
 public class Employee {
+    String name;
+    int age ;
+    String company;
 
-    public String empName;
-    public int    empId;
-    public   String  dept;
-
-    public Employee(String empName, int empId, String dept) {
-        this.empName = empName;
-        this.empId = empId;
-        this.dept = dept;
+    public Employee(String name, int age, String company) {
+        this.name = name;
+        this.age = age;
+        this.company = company;
     }
 
-    public String getEmpName() {
-        return empName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmpName(String empName) {
-        this.empName = empName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getEmpId() {
-        return empId;
+    public int getAge() {
+        return age;
     }
 
-    public void setEmpId(int empId) {
-        this.empId = empId;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getDept() {
-        return dept;
+    public String getCompany() {
+        return company;
     }
 
-    public void setDept(String dept) {
-        this.dept = dept;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }
