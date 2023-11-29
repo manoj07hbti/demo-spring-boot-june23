@@ -4,10 +4,10 @@ import com.example.demospringbootjune23.model.Employee;
 import com.example.demospringbootjune23.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -20,7 +20,16 @@ public class EmployeeService {
         repository.save(employee);// INSERT INTO TABLE
         return "Successfully saved to DB...";
     }
+    public Optional<Employee> getEmployeeById(Long id){
+        return repository.findById(id); // select * from TABLE where id=?
+    }
+    public Employee getEmployeeByName(@PathVariable String name){
+        return repository.findByEmpName(name);
+    }
 
+    public Employee getEmployeeByIdName(Long id, String name){
+        return repository.findByIdAndEmpName(id,name) ;
+    }
     public List<Employee> getAllEmp(){
 
       return repository.findAll(); // SELECT * FROM TABLE

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class DBController {
@@ -26,6 +27,21 @@ public class DBController {
     public List<Employee> getAllEmp() {
 
         return service.getAllEmp();
+    }
+
+    @GetMapping("/get_emp_by_id/{id}")
+    public Optional<Employee> getEmployee(@PathVariable Long id){
+      return   service.getEmployeeById(id);
+    }
+
+    @GetMapping("/get_emp_by_name/{name}")
+    public Employee getEmployeeByName(@PathVariable String name){
+        return   service.getEmployeeByName(name);
+    }
+
+    @GetMapping("/get_emp_by_id_name/{id}/{name}")
+    public Employee getEmployeeByIdName(@PathVariable Long id,@PathVariable String name){
+        return service.getEmployeeByIdName(id,name) ;
     }
 
     @PutMapping("/update_emp_db")
