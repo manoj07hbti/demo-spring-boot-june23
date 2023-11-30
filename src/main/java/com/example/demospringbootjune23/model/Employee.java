@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="EMPLOYEE_TABLE")// it will make this java class as Database Table
+@Entity(name = "EMPLOYEE_TABLE")// it will make this java class as Database Table
 
 public class Employee {
 
@@ -15,18 +15,31 @@ public class Employee {
 
 
     public String empName;
-    public int    empId;
-    public   String  dept;
+    public int empId;
+    public String dept;
+    public String city;
 
 
     //default constructor
     public Employee() {
     }
 
+    public Employee(String city) {
+        this.city = city;
+    }
+
     public Employee(String empName, int empId, String dept) {
         this.empName = empName;
         this.empId = empId;
         this.dept = dept;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getEmpName() {
