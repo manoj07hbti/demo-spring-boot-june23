@@ -5,9 +5,10 @@ import com.example.demospringbootjune23.model.Employee;
 import com.example.demospringbootjune23.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -23,6 +24,20 @@ public class EmployeeService {
 
         return "Successfully saved to DataBase";
 
+    }
+
+    public Optional<Employee> getEmployeeById(Long id){
+       return repository.findById(id);// SELECT * FROM TABLE WHERE ID=?
+
+
+    }
+    public Employee getEmployeeByName(String name){
+
+        return repository.findByEmpName(name);
+    }
+    public Employee getEmployeeByIdAndName(Long id, String name) {
+
+        return repository.findByIdAndEmpName(id, name);
     }
 
     public List<Employee> getAllEmployeeDataBase() {
