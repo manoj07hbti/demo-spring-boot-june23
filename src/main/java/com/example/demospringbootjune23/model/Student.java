@@ -6,12 +6,6 @@ public class Student {
     int age;
     String section;
 
-    public Student(String name, int age, String section) {
-        this.name = name;
-        this.age = age;
-        this.section = section;
-    }
-
     public String getName() {
         return name;
     }
@@ -35,4 +29,13 @@ public class Student {
     public void setSection(String section) {
         this.section = section;
     }
+
+    public Student(String name, int age, String section) {
+        this.name = name;
+        this.age = age;
+        this.section = section;
+    }
+
+
+
 }
