@@ -12,6 +12,26 @@ public class Employee {
     public String empName;
     public int    empId;
     public   String  dept;
+    public String city;
+
+    public Employee(Long id, String empName, int empId, String dept, String city) {
+        this.id = id;
+        this.empName = empName;
+        this.empId = empId;
+        this.dept = dept;
+        this.city = city;
+    }
+
+    public Employee(String name, int id, String dept, String city) {
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public Employee() {
     }

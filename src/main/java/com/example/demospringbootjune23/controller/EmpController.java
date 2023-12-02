@@ -16,8 +16,8 @@ public class EmpController {
 
     //Add
     @RequestMapping("/add_emp/{name}/{id}/{dept}")
-    public String addEmp(@PathVariable String name, @PathVariable int id,@PathVariable String dept){
-        Employee employee=new Employee(name,id,dept);
+    public String addEmp(@PathVariable String name, @PathVariable int id,@PathVariable String dept, @PathVariable String city){
+        Employee employee=new Employee(name,id,dept,city);
        employeeArrayList.add(employee);
      return "Employee Added Successfully...";
     }

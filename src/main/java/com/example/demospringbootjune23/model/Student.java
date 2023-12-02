@@ -12,6 +12,23 @@ public class Student {
     String name;
     int age;
     String section;
+    String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Student(Long id, String name, int age, String section, String city) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.section = section;
+        this.city = city;
+    }
 
     public Student() {
     }

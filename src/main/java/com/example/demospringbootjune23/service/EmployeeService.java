@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -24,6 +25,21 @@ public class EmployeeService {
     public String removeById(Long id){
        repository.deleteById(id);
        return "record deleted successfully";
+    }
+    public Optional<Employee> getEmployee(Long id){
+
+return repository.findById(id);
+    }
+
+
+    public Employee getEmpByName(String name){
+        return repository.findByEmpName(name);
+    }
+    public Employee getEmpByCity(String city){
+        return repository.findByCity(city);
+    }
+    public Employee getEmpByNameAndCity(String name,String city){
+        return repository.findByEmpNameAndCity(name,city);
     }
     public String updateEmp(String name,Long id){
         //find name yu want t update by id
