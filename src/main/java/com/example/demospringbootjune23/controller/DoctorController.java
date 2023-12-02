@@ -1,47 +1,40 @@
 package com.example.demospringbootjune23.controller;
 
-import com.example.demospringbootjune23.Model2.Doctor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demospringbootjune23.Model2.DoctorClass;
+import com.example.demospringbootjune23.service.DoctorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class DoctorController {
 
-    ArrayList<Doctor> doctorArrayList=new ArrayList<>();
-    @RequestMapping("/Create_Doctor/{name}/{age}/{specialist}")
+    @Autowired
+    DoctorService service;
 
-    public Doctor createDoctor(@PathVariable String name, @PathVariable int age, @PathVariable String specialist){
-        return new Doctor(name,age,specialist);
-        }
-        @RequestMapping("/Create_Doctor_list/{name}/{age}/{specialist}")
+    //create
+    @PostMapping("/Add_doc_db")
+    public String addDoc(@RequestBody DoctorClass doctorClass){
+        return service.add(doctorClass);
+    }
 
-        public ArrayList<Doctor> CreateDoctorList(@PathVariable String name,@PathVariable int age, @PathVariable String specialist){
-        Doctor doctor=new Doctor(name,age,specialist);
-        doctorArrayList.add(doctor);
-        return doctorArrayList;
-        }
-        @RequestMapping("/Update_Doctor")
-        public String updateDoctor(@RequestParam String name, @RequestParam int index){
-
-        Doctor doctor=doctorArrayList.get(index);
-        doctor.setName(name);
-        doctorArrayList.set(index,doctor);
-        return "record update successfully";
-
-        }
-        @RequestMapping("remove_doctor/{index}")
-    public String removeDoctor(@PathVariable int index){
-        doctorArrayList.remove(index);
-        return "record delete";
-        }
-
-
-
+    @GetMapping("/get_all_doc")
+    public List<DoctorClass> getAllDoc(){
+        return service.getAllDoc();
     }
 
 
+    @PutMapping("/update_doc_db")
+    public String updateName(@RequestParam String name,@RequestParam Long id){
+     return service.updateName(name,id);
 
+    }
+
+    @DeleteMapping("/delete_doc_db/{id}")
+    public String delete(@PathVariable Long id){
+        return service.removeById(id);
+
+    }
+
+}
