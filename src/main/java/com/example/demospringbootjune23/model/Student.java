@@ -1,10 +1,20 @@
 package com.example.demospringbootjune23.model;
 
-public class Student {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue
+    Long id;
     String name;
     int age;
     String section;
+
+    public Student() {
+    }
 
     public String getName() {
         return name;
@@ -35,7 +45,5 @@ public class Student {
         this.age = age;
         this.section = section;
     }
-
-
 
 }
