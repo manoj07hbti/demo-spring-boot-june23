@@ -1,6 +1,7 @@
 package com.example.demospringbootjune23.controller;
 
 import com.example.demospringbootjune23.model.Employee;
+import com.example.demospringbootjune23.repository.EmployeeRepository;
 import com.example.demospringbootjune23.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,9 @@ public class DBController {
 
     @Autowired
     EmployeeService service;
+
+    @Autowired
+    EmployeeRepository repository;
     //CREATE
 
     @PostMapping("/add_emp_db")
@@ -71,4 +75,11 @@ public class DBController {
 
         return service.removeById(id);
     }
+
+    @DeleteMapping("/delete_emp_range/{start}/{end}")
+    public String deleteByRange(@PathVariable Long start,@PathVariable Long end) {
+
+        return repository.deleteByRange(start,end);
+    }
+
 }

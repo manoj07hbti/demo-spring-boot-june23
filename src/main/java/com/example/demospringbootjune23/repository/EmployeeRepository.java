@@ -25,4 +25,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
     @Query(value = "select * from EMP_JUNE_23 where EMP_NAME=:name and DEPT=:dept",nativeQuery = true)
     public Employee getEmpNameDeptNative(@Param("name") String name,@Param("dept") String dept);
 
+    @Query(value = "delete from EMP_JUNE_23 where ID >=:start and ID <=:end",nativeQuery = true)
+    public String deleteByRange(@Param("start") Long start,@Param("end") Long end);
+
 }
