@@ -29,9 +29,25 @@ public class DBController {
         return service.getAllEmp();
     }
 
+    @GetMapping("/get_all_emp_db_native")
+    public List<Employee> getAllEmpNative() {
+
+        return service.getAllEmpNative();
+    }
+
     @GetMapping("/get_emp_by_id/{id}")
     public Optional<Employee> getEmployee(@PathVariable Long id){
       return   service.getEmployeeById(id);
+    }
+
+    @GetMapping("/get_emp_by_name_native/{name}")
+    public Employee getEmployeeNative(@PathVariable String name){
+        return   service.getEmployeeNameNative(name);
+    }
+
+    @GetMapping("/emp_by_name_dept_native/{name}/{dept}")
+    public Employee getEmployeeNative(@PathVariable String name,@PathVariable String dept){
+        return   service.getEmployeeNameDeptNative(name,dept);
     }
 
     @GetMapping("/get_emp_by_name/{name}")

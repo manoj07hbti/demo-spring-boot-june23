@@ -35,6 +35,17 @@ public class EmployeeService {
       return repository.findAll(); // SELECT * FROM TABLE
     }
 
+    public List<Employee> getAllEmpNative(){
+
+        return repository.getAllEmpNative(); // SELECT * FROM TABLE
+    }
+    public Employee getEmployeeNameNative( String name){
+        return repository.getEmpNameNative(name) ;
+    }
+
+    public Employee getEmployeeNameDeptNative( String name,String dept){
+        return repository.getEmpNameDeptNative(name,dept) ;
+    }
     public String removeById(Long id){
 
         repository.deleteById(id);// DELETE FROM TABLE WHERE ID=
