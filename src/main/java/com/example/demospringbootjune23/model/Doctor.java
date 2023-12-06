@@ -5,16 +5,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name="Doctor_D")
-public class Doctor_Dr {
+public class Doctor {
 
     @Id
     @GeneratedValue
     Long id;
     String name;
-    int Id_no;
+    int docNo;
     String course;
 
-    public Doctor_Dr() {
+    public Doctor() {
     }
 
     public String getName() {
@@ -25,12 +25,12 @@ public class Doctor_Dr {
         this.name = name;
     }
 
-    public int getId() {
-        return Id_no;
+    public int getDocNo() {
+        return docNo;
     }
 
-    public void setId(int id) {
-        Id_no = id;
+    public void setDocNo(int docNo) {
+        this.docNo = docNo;
     }
 
     public String getCourse() {
@@ -41,9 +41,9 @@ public class Doctor_Dr {
         this.course = course;
     }
 
-    public Doctor_Dr(String name, int id, String course) {
+    public Doctor(String name, int docNo, String course) {
         this.name = name;
-        Id_no = id;
+        this.docNo = docNo;
         this.course = course;
     }
 }
