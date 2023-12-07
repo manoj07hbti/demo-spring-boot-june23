@@ -27,9 +27,25 @@ public class EmpController {
     //   return service.getEmployeeId(id);
     //}
    @GetMapping("/get_Emp_by_id/{id}")
-   public Optional<Emp_DB> getEmployeeId(@PathVariable Long id){
+   public Optional<Emp_DB> getEmployeeId(@PathVariable Long id)
+   {
        return service.getEmployeeId(id);
    }
+    @GetMapping("/get_Emp_by_name/{name}")
+    public Emp_DB getEmp_DBByName(@PathVariable String name)
+    {
+        return service.getEmp_DBByName(name) ;
+    }
+    @GetMapping("/get_Emp_by_id_name/{id}/{name}")
+    public Emp_DB getEmp_DBByIdEmpName(@PathVariable Long id,@PathVariable String name)
+    {
+        return service.getEmp_DBByIdAndEmpName(id, name);
+    }
+    @GetMapping("/get_Emp_by_id_name_city/{name}/{city}")
+    public Emp_DB getEmp_DBByIdEmpName(@PathVariable String name,@PathVariable String city )
+    {
+        return service.getEmp_DBByCityAndEmpName(name, city);
+    }
 
     @DeleteMapping("/Deleted_Emp_DB/{id}")
     public String Deleted(@PathVariable Long id){

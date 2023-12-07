@@ -9,41 +9,41 @@ public class Emp_DB {
     @Id
     @GeneratedValue
     Long id;
-    String EmpName;
-    int EmpId;
-    String EmpCity;
+    String empName;
+    int empId;
+    String empCity;
 
     public Emp_DB() {
     }
 
     public Emp_DB(String empName, int empId, String empCity) {
-        EmpName = empName;
-        EmpId = empId;
-        EmpCity = empCity;
+        this.empName = empName;
+        this.empId = empId;
+        this.empCity = empCity;
 
     }
 
     public String getEmpName() {
-        return EmpName;
+        return empName;
     }
 
     public void setEmpName(String empName) {
-        EmpName = empName;
+        this.empName = empName;
     }
 
     public int getEmpId() {
-        return EmpId;
+        return empId;
     }
 
     public void setEmpId(int empId) {
-        EmpId = empId;
+        this.empId = empId;
     }
 
     public String getEmpCity() {
-        return EmpCity;
+        return empCity;
     }
 
     public void setEmpCity(String empCity) {
-        EmpCity = empCity;
+        this.empCity = empCity;
     }
 }

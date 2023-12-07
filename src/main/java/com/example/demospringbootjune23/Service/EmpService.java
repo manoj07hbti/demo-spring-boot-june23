@@ -24,8 +24,17 @@ public class EmpService {
   public Optional<Emp_DB> getEmployeeId(Long id){
       return repository.findById(id);
   }
+    public Emp_DB getEmp_DBByName(@PathVariable String name) {
+        return repository.findByEmpName(name);
 
-
+    }
+    public Emp_DB getEmp_DBByIdAndEmpName(Long id, String name ) {
+        return repository.findByIdAndEmpName(id,name);
+    }
+    public Emp_DB getEmp_DBByCityAndEmpName( String name,  String city )
+    {
+        return repository.findByEmpNameAndEmpCity(name, city);
+    }
     public List<Emp_DB> getAllEmp(){
         return repository.findAll();
     }
