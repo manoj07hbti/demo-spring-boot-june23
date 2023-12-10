@@ -32,6 +32,7 @@ public class EmployeeAssignmentService {
     public List<Employee> getAllEmployeeDataBase() {
         return repository.findAll();//SELECT * FROM TABLE-NAME
     }
+
     public List<Employee> getAllEmployeeDataBaseNative() {
         return repository.getAllEmpNative();//SELECT * FROM TABLE-NAME
     }
@@ -50,6 +51,7 @@ public class EmployeeAssignmentService {
 
         return repository.findByEmpNameAndCity(name, city);
     }
+
     public Employee getEmployeeByNameNative(String name) {
 
         return repository.getEmpNameNative(name);
@@ -65,4 +67,5 @@ public class EmployeeAssignmentService {
         repository.deleteById(id);//DELETE FROM TABLE WHERE ID=?
         return "Successfully Deleted from DataBase";
     }
+
 }

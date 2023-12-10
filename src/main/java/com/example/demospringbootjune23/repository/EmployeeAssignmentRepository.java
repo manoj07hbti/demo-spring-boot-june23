@@ -20,12 +20,13 @@ public interface EmployeeAssignmentRepository extends JpaRepository<Employee, Lo
     public Employee findByIdAndCity(Long id, String city);
 //find by section//
 
-    @Query (value = "select * from EMPLOYEE_TABLE",nativeQuery = true)
-    public List<Employee>getAllEmpNative();
+    @Query(value = "select * from EMPLOYEE_TABLE", nativeQuery = true)
+    public List<Employee> getAllEmpNative();
 
-    @Query(value = "select * from EMPLOYEE_TABLE where EMP_NAME=:name",nativeQuery = true)
+    @Query(value = "select * from EMPLOYEE_TABLE where EMP_NAME=:name", nativeQuery = true)
     public Employee getEmpNameNative(@Param("name") String name);
 
-    @Query(value = "select * from EMPLOYEE_TABLE where EMP_NAME=:name and DEPT=:dept",nativeQuery = true)
+    @Query(value = "select * from EMPLOYEE_TABLE where EMP_NAME=:name and DEPT=:dept", nativeQuery = true)
     public Employee getEmpNameDeptNative(@Param("name") String name, @Param("dept") String dept);
+
 }
