@@ -11,7 +11,10 @@ public class ControllerDemo {
     }
     @RequestMapping("/Return")
     public String demo(){
-        return "My First Spring Boot Class......";
-
+        return "Welcome To Spring Boot Class......";
+    }
+    @RequestMapping("/MARKS")
+    public int GetMarks(){
+        return 56;
     }
 }
