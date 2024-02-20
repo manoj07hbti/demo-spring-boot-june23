@@ -10,28 +10,46 @@ import java.util.ArrayList;
 @RestController
 public class RequestParamController {
 
-    ArrayList<Student> studentArrayList= new ArrayList<>();
+    ArrayList<Student> studentArrayList = new ArrayList<>();
 
     @RequestMapping("/even_odd")
-    public String evenOdd(@RequestParam int number){
+    public String evenOdd(@RequestParam int number) {
 
-        if(number%2==0){
+        if (number % 2 == 0) {
 
-            return "Number is even number :"+number;
-        }else {
-            return "Number is ODD number :"+number;
+            return "Number is even number :" + number;
+        } else {
+            return "Number is ODD number :" + number;
         }
     }
 
-    @RequestMapping("/sub")
-    public String sub(@RequestParam int a, @RequestParam int b){
+    @RequestMapping("/add")
+    public String add(@RequestParam int a, @RequestParam int b) {
 
-        return "Subtraction is :"+(a-b);
+        return "Addition is :" + (a + b);
+    }
+
+    @RequestMapping("/sub")
+    public String sub(@RequestParam int a, @RequestParam int b) {
+
+        return "Subtraction is :" + (a - b);
+    }
+
+    @RequestMapping("/multi")
+    public String multi(@RequestParam int a, @RequestParam int b) {
+
+        return "Multiplication is :" + (a * b);
+    }
+
+    @RequestMapping("/div")
+    public String div(@RequestParam int a, @RequestParam int b) {
+
+        return "Division is :" + (a / b);
     }
 
     @RequestMapping("/add_get_students")
-    public ArrayList<Student> addAndGetStudents(@RequestParam String name,@RequestParam int age,@RequestParam String section){
-        Student student= new Student(name,age,section);
+    public ArrayList<Student> addAndGetStudents(@RequestParam String name, @RequestParam int age, @RequestParam String section) {
+        Student student = new Student(name, age, section);
 
         studentArrayList.add(student);
 
