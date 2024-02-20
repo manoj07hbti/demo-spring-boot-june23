@@ -14,7 +14,7 @@ public class RequestParamController {
 
     @RequestMapping("/even_odd")
     public String evenOdd(@RequestParam int number) {
-
+//localhost:8080/even_odd?number=11
         if (number % 2 == 0) {
 
             return "Number is even number :" + number;
@@ -23,6 +23,7 @@ public class RequestParamController {
         }
     }
 
+    //localhost:8080/add?a=45&b=66
     @RequestMapping("/add")
     public String add(@RequestParam int a, @RequestParam int b) {
 
