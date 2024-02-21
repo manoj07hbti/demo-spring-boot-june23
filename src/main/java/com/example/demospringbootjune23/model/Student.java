@@ -2,9 +2,14 @@ package com.example.demospringbootjune23.model;
 
 public class Student {
 
-    String name;
-    int age;
-    String section;
+    public String name;
+
+    public int age;
+
+    public String section;
+
+    public Student() {
+    }
 
     public Student(String name, int age, String section) {
         this.name = name;
